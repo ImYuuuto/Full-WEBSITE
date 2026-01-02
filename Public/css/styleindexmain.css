@@ -1,0 +1,98 @@
+.navbar-custom {
+            background-color: #0a2540; /* bleu foncé */
+}
+.navbar-brand,.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #2ecc71 !important; /* vert */
+}
+.dropdown-menu {
+    background-color: #ffffff;
+}
+.dropdown-item {
+    color: #0a2540;
+}
+.dropdown-item:hover {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+.btn-search {
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+.btn-search:hover {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+.search-input {
+    border-color: #2ecc71;
+}
+/* Section */
+
+.main-banner {
+    margin-top: 0;
+}
+.carousel-img {
+    height: 75vh;
+    object-fit: cover;
+    filter: brightness(65%);
+}
+.carousel-caption {
+    background-color: rgba(10, 37, 64, 0.7); /* bleu foncé */
+    padding: 20px;
+    border-radius: 10px;
+}
+.carousel-caption h2 {
+    color: #2ecc71; /* vert */
+    font-weight: bold;
+}
+.carousel-caption p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer-custom {
+        background-color: #0a2540; /* bleu foncé */
+}
+.footer-title {
+    color: #2ecc71; /* vert */
+    margin-bottom: 15px;
+}
+.social-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.social-link:hover {
+    color: #2ecc71;
+    text-decoration: underline;
+}
+.footer-line {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
