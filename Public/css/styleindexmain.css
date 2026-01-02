@@ -21,14 +21,24 @@
 .btn-search {
     border-color: #2ecc71;
     color: #2ecc71;
+    background-color: transparent; /* ensure visibility */
+    transition: all 0.3s ease;
 }
 .btn-search:hover {
     background-color: #2ecc71;
-    color: #ffffff;
+    color: #2ecc71;
 }
 .search-input {
     border-color: #2ecc71;
 }
+.navbar .form-control {
+    width: 200px; 
+}
+
+.navbar .d-flex {
+    align-items: center;
+}
+
 /* Section */
 
 .main-banner {

@@ -1,9 +1,19 @@
+/* ================= GLOBAL ================= */
 body {
     background-color: #f8f9fa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
 }
-/* header*/
+main {
+    flex: 1;
+}
+
+/* ================= HEADER ================= */
 .navbar-custom {
-            background-color: #0a2540; /* bleu foncé */
+    background-color: #0a2540; /* bleu foncé */
 }
 .navbar-brand,.nav-link {
     color: #ffffff !important;
@@ -25,39 +35,98 @@ body {
 .btn-search {
     border-color: #2ecc71;
     color: #2ecc71;
+    background-color: transparent; /* ensure visibility */
+    transition: all 0.3s ease;
 }
 .btn-search:hover {
     background-color: #2ecc71;
-    color: #ffffff;
+    color: #f8f8f8;
 }
 .search-input {
     border-color: #2ecc71;
 }
-/* section */
+.navbar .form-control {
+    width: 200px; 
+}
+
+.navbar .d-flex {
+    align-items: center;
+}
+
+/* ================= HERO ================= */
 .section-title {
     color: #0a2540;
     font-weight: bold;
 }
-.card-custom{ 
-    border-top: 4px solid #2ecc71;
+.auth-hero {
+    height: 35vh;
+    background:
+        linear-gradient(rgba(10,37,64,.8), rgba(10,37,64,.8)),
+        url("../images/indexmain/ofppt-campus.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
+.auth-hero h1 {
+    font-weight: 700;
+}
+.auth-hero p {
+    font-size: 1.2rem;
+}
+
+/* ================= CARDS & BUTTONS ================= */
+.card-custom {
+    border-top: 4px solid #2ecc71;
+    opacity: 0;
+    max-height: 0;                /* <-- key change */
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, max-height 0.5s ease-in-out; /* <-- add transition here */
+    pointer-events: none;         /* prevent interaction when hidden */
+}
+
+.card-custom.show {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1500px;           /* <-- large enough for tallest form */
+    pointer-events: auto;         /* allow interaction */
+}
+
+
+
 .btn-custom {
     background-color: #2ecc71;
     color: white;
     border: none;
+    transition: background-color 0.3s ease;
 }
-.btn-custom:hover{ 
+.btn-custom:hover {
     background-color: #27ae60;
 }
-label{
+
+label {
     font-weight: 500;
 }
-/* footer */
+
+/* Forgot password link */
+.forgot-link-icon {
+    display: block;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.forgot-link-icon:hover {
+    color: #27ae60;
+}
+
+/* ================= FOOTER ================= */
 .footer-custom {
-        background-color: #0a2540; /* bleu foncé */
+    background-color: #0a2540; /* dark blue */
 }
 .footer-title {
-    color: #2ecc71; /* vert */
+    color: #2ecc71; /* green */
     margin-bottom: 15px;
 }
 .social-link {
@@ -71,4 +140,16 @@ label{
 }
 .footer-line {
     border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= FORM ELEMENTS ================= */
+input.form-control,
+select.form-select {
+    border: 1px solid #2ecc71;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input.form-control:focus,
+select.form-select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
 }

@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion & Inscription</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/Inscrire.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
 
         <a class="navbar-brand" href="#">
             <img src="images/indexmain/Logo_ofppt.png" width="40" class="me-2">
@@ -24,7 +30,7 @@
 
             <!-- Links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
 
                 <!-- Dropdown -->
@@ -43,183 +49,130 @@
             <!-- Search -->
             <form class="d-flex">
                 <input class="form-control me-2 search-input" type="search" placeholder="Rechercher">
-                <button class="btn btn-search" type="submit">Search</button>
+                <button class="btn btn-search btn-success btn-outline-light" type="submit">Search</button>
             </form>
 
         </div>
     </div>
     </nav>
 
+<!-- ================= HERO ================= -->
+<section class="auth-hero d-flex align-items-center">
+    <div class="container text-center text-white">
+        <h1 class="fw-bold">Espace Stagiaire</h1>
+        <p class="lead">Connexion, inscription et réinscription en ligne</p>
+    </div>
+</section>
 
+<!-- ================= MAIN ================= -->
+<main class="container my-5" style="max-width: 900px;">
 
+    <!-- Choice Buttons -->
+    <div class="text-center mb-4">
+        <h3 class="section-title mb-3">Choisissez une option</h3>
+        <button class="btn btn-custom me-2" onclick="showForm('login')">Connexion</button>
+        <button class="btn btn-outline-success me-2" onclick="showForm('inscription')">Nouvelle Inscription</button>
+        <button class="btn btn-outline-success" onclick="showForm('reinscription')">Réinscription</button>
+    </div>
 
+    <hr class="my-5">
 
-
-    <div class="container my-5">
-
-    <!-- ================= LOGIN ================= -->
-    <div class="card card-custom mb-5">
+    <!-- LOGIN -->
+    <div id="login" class="card card-custom mb-5">
         <div class="card-body">
             <h3 class="section-title mb-4">Connexion</h3>
-
             <form>
                 <div class="mb-3">
-                    <label>Identifiant (Email ou N° étudiant)</label>
-                    <input type="text" class="form-control" required>
+                    <label>Identifiant</label>
+                    <input class="form-control" required>
                 </div>
-
                 <div class="mb-3">
                     <label>Mot de passe</label>
                     <input type="password" class="form-control" required>
                 </div>
-
+                <a class="forgot-link-icon mb-3" href="#"><i class="bi bi-lock-fill me-1"></i> Oublie votre mot de passe ?</a>
                 <button class="btn btn-custom">Se connecter</button>
             </form>
         </div>
     </div>
 
-    <!-- ================= INSCRIPTION ================= -->
-    <div class="card card-custom mb-5">
+    <!-- INSCRIPTION -->
+    <div id="inscription" class="card card-custom mb-5">
         <div class="card-body">
             <h3 class="section-title mb-4">Inscription – Nouveaux Stagiaires</h3>
-
-            <form>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label>Nom et Prénom</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Date de naissance</label>
-                        <input type="date" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Téléphone</label>
-                        <input type="tel" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Niveau d’études</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Filière souhaitée</label>
-                        <select class="form-select" required>
-                            <option selected disabled>Choisir...</option>
-                            <option>Développement Web</option>
-                            <option>Réseaux Informatiques</option>
-                            <option>Data Science</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Mot de passe</label>
-                        <input type="password" class="form-control" required>
-                    </div>
+            <form class="row">
+                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Nom et Prénom" required></div>
+                <div class="col-md-6 mb-3"><input type="date" class="form-control" required></div>
+                <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
+                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Téléphone" required></div>
+                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Niveau d’études" required></div>
+                <div class="col-md-6 mb-3">
+                    <select class="form-select" required>
+                        <option disabled selected>Filière souhaitée</option>
+                        <option>Développement Web</option>
+                        <option>Réseaux</option>
+                        <option>Data Science</option>
+                    </select>
                 </div>
-
-                <button class="btn btn-custom">S'inscrire</button>
+                <div class="col-md-6 mb-3"><input type="password" class="form-control" placeholder="Mot de passe" required></div>
+                <div class="col-12">
+                    <button class="btn btn-custom">S'inscrire</button>
+                </div>
             </form>
         </div>
     </div>
 
-    <!-- ================= RÉINSCRIPTION ================= -->
-    <div class="card card-custom">
+    <!-- REINSCRIPTION -->
+    <div id="reinscription" class="card card-custom mb-5">
         <div class="card-body">
             <h3 class="section-title mb-4">Réinscription – Anciens Stagiaires</h3>
-
-            <form>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label>Identifiant Stagiaire</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Nom et Prénom</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Filière actuelle</label>
-                        <select class="form-select" required>
-                            <option selected disabled>Choisir...</option>
-                            <option>Développement Web</option>
-                            <option>Réseaux Informatiques</option>
-                            <option>Data Science</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Année d’inscription précédente</label>
-                        <input type="number" class="form-control" placeholder="2024" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required>
-                    </div>
+            <form class="row">
+                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Identifiant stagiaire" required></div>
+                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Nom et Prénom" required></div>
+                <div class="col-md-6 mb-3">
+                    <select class="form-select" required>
+                        <option disabled selected>Filière actuelle</option>
+                        <option>Développement Web</option>
+                        <option>Réseaux</option>
+                        <option>Data Science</option>
+                    </select>
                 </div>
-
-                <button class="btn btn-custom">Se réinscrire</button>
+                <div class="col-md-6 mb-3"><input type="number" class="form-control" placeholder="Année précédente" required></div>
+                <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
+                <div class="col-12">
+                    <button class="btn btn-custom">Se réinscrire</button>
+                </div>
             </form>
         </div>
     </div>
 
-    </div>
-<!-- Footer -->
-    <footer class="footer-custom text-white pt-4">
-    <div class="container">
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-custom text-white">
+    <div class="container py-4">
         <div class="row">
-
-            <!-- Coordonnées -->
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6">
                 <h5 class="footer-title">Coordonnées</h5>
-                <p>📍 Adresse : Avenue Brahim Roudani, El Jadida, Maroc</p>
-                <p>📞 Téléphone : 05233-41269</p>
-                <p>✉️ Email :  Ofppt@etablissement.ma</p>
+                <p>📍 Avenue Brahim Roudani, El Jadida</p>
+                <p>📞 05233-41269</p>
+                <p>✉️ ofppt@etablissement.ma</p>
             </div>
-
-            <!-- Réseaux sociaux -->
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6">
                 <h5 class="footer-title">Suivez-nous</h5>
-                <a href="https://www.facebook.com/ofppt.page.officielle/" class="social-link me-3">Facebook</a>
-                <a href="https://x.com/OFPPT_Officiel" class="social-link me-3">X</a>
-                <a href="https://www.instagram.com/ofppt.officiel/" class="social-link me-3">Instagram</a>
-                <a href="https://www.linkedin.com/company/ofpptpageofficielle/" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link me-3">Facebook</a>
+                <a href="#" class="social-link me-3">X</a>
+                <a href="#" class="social-link me-3">Instagram</a>
+                <a href="#" class="social-link">LinkedIn</a>
             </div>
-
         </div>
-
-        <hr class="footer-line">
-
-        <div class="text-center pb-3">
-            © 2026  OFPPT. Tous droits réservés
-        </div>
+        <hr>
+        <p class="text-center mb-0">© 2026 OFPPT. Tous droits réservés</p>
     </div>
+</footer>
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+<!-- ================= SCRIPTS ================= -->
+<script src="bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/inscrire.js"></script>
 </body>
 </html>
