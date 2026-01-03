@@ -1,5 +1,5 @@
 .navbar-custom {
-            background-color: #0a2540; /* bleu foncé */
+    background-color: #0a2540; /* bleu foncé */
 }
 .navbar-brand,.nav-link {
     color: #ffffff !important;
@@ -26,7 +26,7 @@
 }
 .btn-search:hover {
     background-color: #2ecc71;
-    color: #2ecc71;
+    color: #f8f8f8;
 }
 .search-input {
     border-color: #2ecc71;
@@ -38,7 +38,6 @@
 .navbar .d-flex {
     align-items: center;
 }
-
 /* Section */
 
 .main-banner {
