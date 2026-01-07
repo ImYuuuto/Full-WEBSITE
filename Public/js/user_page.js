@@ -1,50 +1,60 @@
-// Fake student data (in real app, this would come from backend or localStorage)
-const studentData = {
-    name: "Yasser Amine",
-    id: "ST-2025-001",
-    filiere: "Développement Web",
-    year: "1er année",
-    grades: [
-        { module: "HTML & CSS", note: 17.5 },
-        { module: "JavaScript Avancé", note: 18.0 },
-        { module: "PHP & MySQL", note: 16.0 },
-        { module: "Framework Laravel", note: 17.8 },
-        { module: "Projet Intégrateur", note: 15.0 },
-        { module: "Anglais Technique", note: 16.5 }
-    ]
-};
-
-// Calculate average
-function calculateAverage(grades) {
-    const sum = grades.reduce((acc, curr) => acc + curr.note, 0);
-    return (sum / grades.length).toFixed(2);
-}
-
-// Populate page on load
 document.addEventListener("DOMContentLoaded", () => {
-    // Fill personal info
-    document.getElementById("studentName").textContent = studentData.name;
-    document.getElementById("studentId").textContent = studentData.id;
-    document.getElementById("filiere").textContent = studentData.filiere;
-    document.getElementById("year").textContent = studentData.year;
+    const studentJSON = localStorage.getItem('currentStudent');
+
+    // If no user is logged in, redirect to login
+    if (!studentJSON) {
+        alert("Veuillez vous connecter d'abord.");
+        window.location.href = "Inscrire.html";
+        return;
+    }
+
+    const student = JSON.parse(studentJSON);
+
+    // Profile pictures mapping
+    const profilePhotos = {
+        "Yuuto": "images/user_page/yasser.png",
+        "Manal": "images/user_page/manal.jpeg"
+    };
+
+    const defaultPhoto = "images/user_page/default-profile.png";
+    const photoSrc = profilePhotos[student.username] || defaultPhoto;
+
+    // Fill personal information
+    document.getElementById("profileImg").src = photoSrc;
+    document.getElementById("studentName").textContent = student.fullName;
+    document.getElementById("studentId").textContent = student.studentId;
+    document.getElementById("filiere").textContent = student.filiere;
+    document.getElementById("year").textContent = student.year;
 
     // Fill grades table
     const tableBody = document.getElementById("gradesTable");
-    studentData.grades.forEach(item => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td><strong>${item.module}</strong></td>
-            <td><strong>${item.note}</strong></td>
-            <td>
-                ${item.note >= 16 ? "Très Bien" : 
-                  item.note >= 14 ? "Bien" : 
-                  item.note >= 12 ? "Assez Bien" : 
-                  item.note >= 10 ? "Passable" : "Insuffisant"}
-            </td>
+    tableBody.innerHTML = ""; // Clear
+
+    let totalNotes = 0;
+    student.grades.forEach(grade => {
+        const appreciation = grade.note >= 16 ? "Très Bien" :
+                             grade.note >= 14 ? "Bien" :
+                             grade.note >= 12 ? "Assez Bien" :
+                             grade.note >= 10 ? "Passable" : "Insuffisant";
+
+        tableBody.innerHTML += `
+            <tr>
+                <td><strong>${grade.module}</strong></td>
+                <td><strong>${grade.note.toFixed(1)}</strong></td>
+                <td>${appreciation}</td>
+            </tr>
         `;
-        tableBody.appendChild(row);
+        totalNotes += grade.note;
     });
 
-    // Display average
-    document.getElementById("averageGrade").textContent = calculateAverage(studentData.grades);
+    // Calculate and display average
+    const average = (totalNotes / student.grades.length).toFixed(2);
+    document.getElementById("averageGrade").textContent = average;
+});
+
+// Logout button
+document.getElementById('logoutBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.removeItem('currentStudent');
+    window.location.href = "Inscrire.html";
 });

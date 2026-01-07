@@ -1,25 +1,51 @@
 let isAnimating = false;
 
-// Fake database (demo only - never do this in production!)
+// Fake users database
 const fakeUsers = [
-    { username: "Yuuto", password: "mitoo" }
-    // Add more users here if needed: { username: "test", password: "123" }
+    {
+        username: "Yuuto",
+        password: "mitoo",
+        fullName: "Yasser Amine",
+        studentId: "ST-2025-001",
+        filiere: "Développement Web",
+        year: "1er année",
+        grades: [
+            { module: "HTML & CSS", note: 17.5 },
+            { module: "JavaScript Avancé", note: 18.0 },
+            { module: "PHP & MySQL", note: 16.0 },
+            { module: "Framework Laravel", note: 17.8 },
+            { module: "Projet Intégrateur", note: 15.0 },
+            { module: "Anglais Technique", note: 16.5 }
+        ]
+    },
+    {
+        username: "Manal",
+        password: "yasser",
+        fullName: "Manal Jouali",
+        studentId: "ST-2025-042",
+        filiere: "Développement Web",
+        year: "1ère année",
+        grades: [
+            { module: "Introduction au Web", note: 16.5 },
+            { module: "HTML & CSS Fondamentaux", note: 17.8 },
+            { module: "JavaScript Débutant", note: 15.5 },
+            { module: "Bases de données MySQL", note: 16.0 },
+            { module: "PHP Initiation", note: 17.2 },
+            { module: "Anglais Technique", note: 15.0 }
+        ]
+    }
 ];
 
 function showForm(formId) {
     if (isAnimating) return;
     isAnimating = true;
 
-    const forms = document.querySelectorAll('#login, #inscription, #reinscription');
-    const choiceButtons = document.querySelectorAll('.choice-btn');
+    document.querySelectorAll('#login, #inscription, #reinscription')
+        .forEach(form => form.classList.remove('show'));
 
-    // Hide all forms
-    forms.forEach(form => form.classList.remove('show'));
+    document.querySelectorAll('.choice-btn')
+        .forEach(btn => btn.classList.remove('active'));
 
-    // Deactivate all buttons
-    choiceButtons.forEach(btn => btn.classList.remove('active'));
-
-    // Show the target form
     const targetForm = document.getElementById(formId);
     const targetButton = document.querySelector(`.choice-btn[data-form="${formId}"]`);
 
@@ -30,13 +56,12 @@ function showForm(formId) {
                 targetButton.classList.add('active');
             }
             isAnimating = false;
-        }, 100); // Small delay for smooth hide → show transition
+        }, 100);
     } else {
         isAnimating = false;
     }
 }
 
-// Handle login form submission
 function handleLogin(e) {
     e.preventDefault();
 
@@ -44,28 +69,23 @@ function handleLogin(e) {
     const password = document.getElementById('login-password').value;
     const errorMsg = document.getElementById('loginError');
 
-    // Hide previous error
-    errorMsg.style.display = "none";
+    if (errorMsg) errorMsg.style.display = "none";
 
-    // Check credentials
     const user = fakeUsers.find(u => u.username === username && u.password === password);
 
     if (user) {
-        // Success → go to user page
+        localStorage.setItem('currentStudent', JSON.stringify(user));
         window.location.href = "user_page.html";
     } else {
-        // Failure → show error
-        errorMsg.style.display = "block";
-        document.getElementById('login-password').value = ""; // Clear password
+        if (errorMsg) errorMsg.style.display = "block";
+        document.getElementById('login-password').value = "";
     }
 }
 
-// Initialize everything when page loads
+// Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
-    // Show login form by default
     showForm('login');
 
-    // Attach login handler
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);

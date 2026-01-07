@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Main Custom CSS (shared styles: navbar, footer, etc.) -->
+    <!-- Shared styles -->
     <link rel="stylesheet" href="css/Inscrire.css">
-    <!-- Page-specific CSS -->
+    <!-- Page-specific styles -->
     <link rel="stylesheet" href="css/user_page.css">
 </head>
 <body>
 
-<!-- ================= NAVBAR (Same as Inscrire.html) ================= -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -58,18 +58,18 @@
         <!-- Profile Section -->
         <div class="col-lg-4 mb-4">
             <div class="dashboard-card text-center">
-                <img src="images\user_page\yasser.png" alt="Photo de profil" class="profile-img mb-3">
-                <h4 id="studentName" class="mb-3">Yasser Amine</h4>
+                <img id="profileImg" src="" alt="Photo de profil" class="profile-img mb-3">
+                <h4 id="studentName" class="mb-3"></h4>
                 <p class="text-muted">Stagiaire</p>
 
                 <ul class="list-unstyled mt-4">
-                    <li class="mb-2"><span class="info-label">Identifiant :</span> <span class="info-value" id="studentId">ST-2025-001</span></li>
-                    <li class="mb-2"><span class="info-label">Filière :</span> <span class="info-value" id="filiere">Développement Web</span></li>
-                    <li class="mb-2"><span class="info-label">Année :</span> <span class="info-value" id="year">2ème année</span></li>
+                    <li class="mb-2"><span class="info-label">Identifiant :</span> <span class="info-value" id="studentId"></span></li>
+                    <li class="mb-2"><span class="info-label">Filière :</span> <span class="info-value" id="filiere"></span></li>
+                    <li class="mb-2"><span class="info-label">Année :</span> <span class="info-value" id="year"></span></li>
                     <li class="mb-3"><span class="status-badge">Inscription validée</span></li>
                 </ul>
 
-                <a href="Inscrire.html" class="btn btn-custom w-100">Déconnexion</a>
+                <a href="#" id="logoutBtn" class="btn btn-custom w-100">Déconnexion</a>
             </div>
         </div>
 
@@ -87,40 +87,42 @@
                             </tr>
                         </thead>
                         <tbody id="gradesTable">
-                            <!-- Filled by JavaScript -->
+                            <!-- Filled dynamically by JS -->
                         </tbody>
                     </table>
                 </div>
 
                 <div class="mt-4 text-end">
-                    <p><strong>Moyenne générale :</strong> <span id="averageGrade" class="text-success fs-5">16.80</span>/20</p>
+                    <p><strong>Moyenne générale :</strong> <span id="averageGrade" class="text-success fs-5"></span>/20</p>
                 </div>
             </div>
 
             <div class="dashboard-card mt-4">
                 <h5 style="color: #0a2540;">Informations importantes</h5>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">📅 Date de rentrée : 15 Septembre 2025</li>
-                    <li class="list-group-item">🕙 Horaires : Lundi à Vendredi, 8h30 - 16h30</li>
-                    <li class="list-group-item">📧 Contact formateur : formateur.dev@ofppt.ma</li>
-                    <li class="list-group-item">📚 Plateforme e-learning disponible</li>
+                    <li class="list-group-item">Date de rentrée : 15 Septembre 2025</li>
+                    <li class="list-group-item">Horaires : Lundi à Vendredi, 8h30 - 16h30</li>
+                    <li class="list-group-item">Contact formateur : formateur.dev@ofppt.ma</li>
+                    <li class="list-group-item">Plateforme e-learning disponible</li>
                 </ul>
             </div>
         </div>
     </div>
 </main>
 
-<!-- ================= FOOTER (Same as Inscrire.html) ================= -->
-<footer class="footer-custom text-white">
-    <div class="container py-4">
+<!-- ================= FOOTER ================= -->
+<footer class="footer-custom text-white pt-4">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6">
+
+            <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Coordonnées</h5>
                 <p>📍 Avenue Brahim Roudani, El Jadida</p>
                 <p>📞 05233-41269</p>
                 <p>✉️ ofppt@etablissement.ma</p>
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Suivez-nous</h5>
                 <a href="#" class="social-link me-3">Facebook</a>
                 <a href="#" class="social-link me-3">X</a>
@@ -128,7 +130,8 @@
                 <a href="#" class="social-link">LinkedIn</a>
             </div>
         </div>
-        <hr>
+
+        <hr class="footer-line">
         <p class="text-center mb-0">© 2026 OFPPT. Tous droits réservés</p>
     </div>
 </footer>
