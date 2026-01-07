@@ -16,7 +16,6 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-
         <a class="navbar-brand" href="#">
             <img src="images/indexmain/Logo_ofppt.png" width="40" class="me-2">
             Établissement
@@ -27,13 +26,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navMenu">
-
-            <!-- Links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
 
-                <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
                     <ul class="dropdown-menu">
@@ -46,15 +42,13 @@
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
 
-            <!-- Search -->
             <form class="d-flex">
                 <input class="form-control me-2 search-input" type="search" placeholder="Rechercher">
-                <button class="btn btn-search btn-outline-success " type="submit">Search</button>
+                <button class="btn btn-search" type="submit">Search</button>
             </form>
-
         </div>
     </div>
-    </nav>
+</nav>
 
 <!-- ================= HERO ================= -->
 <section class="auth-hero d-flex align-items-center">
@@ -70,77 +64,109 @@
     <!-- Choice Buttons -->
     <div class="text-center mb-4">
         <h3 class="section-title mb-3">Choisissez une option</h3>
-        <button class="btn btn-custom me-2" onclick="showForm('login')">Connexion</button>
-        <button class="btn btn-outline-success me-2" onclick="showForm('inscription')">Nouvelle Inscription</button>
-        <button class="btn btn-outline-success" onclick="showForm('reinscription')">Réinscription</button>
+        <button type="button" class="btn btn-outline-success choice-btn me-2 active" data-form="login" onclick="showForm('login')">Connexion</button>
+        <button type="button" class="btn btn-outline-success choice-btn me-2" data-form="inscription" onclick="showForm('inscription')">Nouvelle Inscription</button>
+        <button type="button" class="btn btn-outline-success choice-btn" data-form="reinscription" onclick="showForm('reinscription')">Réinscription</button>
     </div>
 
     <hr class="my-5">
 
     <!-- LOGIN -->
-    <div id="login" class="card card-custom mb-5">
+    <div id="login" class="card card-custom show">
         <div class="card-body">
             <h3 class="section-title mb-4">Connexion</h3>
-            <form>
+            <form action="login.php" method="POST">
                 <div class="mb-3">
-                    <label>Identifiant</label>
-                    <input class="form-control" required>
+                    <label for="login-username">Identifiant</label>
+                    <input id="login-username" class="form-control" name="username" required autocomplete="username">
                 </div>
                 <div class="mb-3">
-                    <label>Mot de passe</label>
-                    <input type="password" class="form-control" required>
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" class="form-control" name="password" required autocomplete="current-password">
                 </div>
-                <a class="forgot-link-icon mb-3" href="#"><i class="bi bi-lock-fill me-1"></i> Oublie votre mot de passe ?</a>
-                <button class="btn btn-custom">Se connecter</button>
+                <a class="forgot-link-icon mb-3" href="#"><i class="bi bi-lock-fill me-1"></i> Oublié votre mot de passe ?</a>
+                <button type="submit" class="btn btn-custom">Se connecter</button>
             </form>
         </div>
     </div>
 
     <!-- INSCRIPTION -->
-    <div id="inscription" class="card card-custom mb-5">
+    <div id="inscription" class="card card-custom">
         <div class="card-body">
-            <h3 class="section-title mb-4">Inscription – Nouveaux Stagiaires</h3>
-            <form class="row">
-                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Nom et Prénom" required></div>
-                <div class="col-md-6 mb-3"><input type="date" class="form-control" required></div>
-                <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
-                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Téléphone" required></div>
-                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Niveau d’études" required></div>
+            <h3 class="section-title mb-4">Inscription - Nouveaux Stagiaires</h3>
+            <form class="row" action="inscription.php" method="POST">
                 <div class="col-md-6 mb-3">
-                    <select class="form-select" required>
+                    <label for="ins-name">Nom et Prénom</label>
+                    <input id="ins-name" class="form-control" name="fullname" placeholder="Nom et Prénom" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-birthdate">Date de naissance</label>
+                    <input type="date" id="ins-birthdate" class="form-control" name="birthdate" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-email">Email</label>
+                    <input type="email" id="ins-email" class="form-control" name="email" placeholder="Email" required autocomplete="email">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-phone">Téléphone</label>
+                    <input id="ins-phone" class="form-control" name="phone" placeholder="Téléphone" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-level">Niveau d’études</label>
+                    <input id="ins-level" class="form-control" name="education_level" placeholder="Niveau d’études" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-filiere">Filière souhaitée</label>
+                    <select id="ins-filiere" class="form-select" name="filiere" required>
                         <option disabled selected>Filière souhaitée</option>
                         <option>Développement Web</option>
                         <option>Réseaux</option>
                         <option>Data Science</option>
                     </select>
                 </div>
-                <div class="col-md-6 mb-3"><input type="password" class="form-control" placeholder="Mot de passe" required></div>
+                <div class="col-md-6 mb-3">
+                    <label for="ins-password">Mot de passe</label>
+                    <input type="password" id="ins-password" class="form-control" name="password" placeholder="Mot de passe" required>
+                </div>
                 <div class="col-12">
-                    <button class="btn btn-custom">S'inscrire</button>
+                    <button type="submit" class="btn btn-custom">S'inscrire</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- REINSCRIPTION -->
-    <div id="reinscription" class="card card-custom mb-5">
+    <div id="reinscription" class="card card-custom">
         <div class="card-body">
             <h3 class="section-title mb-4">Réinscription – Anciens Stagiaires</h3>
-            <form class="row">
-                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Identifiant stagiaire" required></div>
-                <div class="col-md-6 mb-3"><input class="form-control" placeholder="Nom et Prénom" required></div>
+            <form class="row" action="reinscription.php" method="POST">
                 <div class="col-md-6 mb-3">
-                    <select class="form-select" required>
+                    <label for="re-id">Identifiant stagiaire</label>
+                    <input id="re-id" class="form-control" name="student_id" placeholder="Identifiant stagiaire" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="re-name">Nom et Prénom</label>
+                    <input id="re-name" class="form-control" name="fullname" placeholder="Nom et Prénom" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="re-filiere">Filière actuelle</label>
+                    <select id="re-filiere" class="form-select" name="filiere" required>
                         <option disabled selected>Filière actuelle</option>
                         <option>Développement Web</option>
                         <option>Réseaux</option>
                         <option>Data Science</option>
                     </select>
                 </div>
-                <div class="col-md-6 mb-3"><input type="number" class="form-control" placeholder="Année précédente" required></div>
-                <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
+                <div class="col-md-6 mb-3">
+                    <label for="re-year">Année précédente</label>
+                    <input type="number" id="re-year" class="form-control" name="previous_year" placeholder="Année précédente" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="re-email">Email</label>
+                    <input type="email" id="re-email" class="form-control" name="email" placeholder="Email" required>
+                </div>
                 <div class="col-12">
-                    <button class="btn btn-custom">Se réinscrire</button>
+                    <button type="submit" class="btn btn-custom">Se réinscrire</button>
                 </div>
             </form>
         </div>

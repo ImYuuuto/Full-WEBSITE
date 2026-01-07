@@ -38,6 +38,12 @@
 .navbar .d-flex {
     align-items: center;
 }
+.btn-search:focus,
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.4);
+}
+
 /* Section */
 
 .main-banner {

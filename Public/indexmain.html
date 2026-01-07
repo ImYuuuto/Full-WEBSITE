@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Accueil | Établissement</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styleindexmain.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">
-            <img src="images/indexmain/Logo_ofppt.png" width="40" class="me-2">
-            Établissement
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/indexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
+            <span>Établissement</span>
         </a>
 
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navMenu">
-
-            <!-- Links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
 
-                <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
                     <ul class="dropdown-menu">
@@ -40,31 +43,25 @@
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
 
-            <!-- Search -->
-            <form class="d-flex">
-                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher">
-                <button class="btn btn-search btn-outline-success" type="submit">Search</button>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher" aria-label="Search">
+                <button class="btn btn-search" type="submit">Search</button>
             </form>
-
         </div>
     </div>
-    </nav>
-    <!-- Section -->
-    <!-- Section principale -->
-    <section class="main-banner">
+</nav>
+
+<!-- ================= CAROUSEL ================= -->
+<section class="main-banner">
     <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-        <!-- Indicators -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            <button data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
         </div>
 
-        <!-- Slides -->
         <div class="carousel-inner">
-
-            <!-- Slide 1 -->
             <div class="carousel-item active">
                 <img src="images/indexmain/carou1.jpg" class="d-block w-100 carousel-img" alt="Établissement">
                 <div class="carousel-caption">
@@ -73,27 +70,23 @@
                 </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="carousel-item">
-                <img src="images/indexmain/carou2.png" class="d-block w-100 carousel-img" alt="Événement">
+                <img src="images/indexmain/carou2.png" class="d-block w-100 carousel-img" alt="Événements">
                 <div class="carousel-caption">
                     <h2>Événements Récents</h2>
                     <p>Conférences, ateliers et activités étudiantes</p>
                 </div>
             </div>
 
-            <!-- Slide 3 -->
             <div class="carousel-item">
-                <img src="images/indexmain/carou3.jpg" class="d-block w-100 carousel-img" alt="Activité">
+                <img src="images/indexmain/carou3.jpg" class="d-block w-100 carousel-img" alt="Vie étudiante">
                 <div class="carousel-caption">
                     <h2>Vie Étudiante</h2>
                     <p>Un campus dynamique et innovant</p>
                 </div>
             </div>
-
         </div>
 
-        <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -101,50 +94,35 @@
         <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-
     </div>
-    </section>
+</section>
 
-
-    <!-- Footer -->
-    <footer class="footer-custom text-white pt-4">
+<!-- ================= FOOTER ================= -->
+<footer class="footer-custom text-white pt-4">
     <div class="container">
         <div class="row">
 
-            <!-- Coordonnées -->
             <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Coordonnées</h5>
-                <p>📍 Adresse : Avenue Brahim Roudani, El Jadida, Maroc</p>
-                <p>📞 Téléphone : 05233-41269</p>
-                <p>✉️ Email :  Ofppt@etablissement.ma</p>
+                <p>📍 Avenue Brahim Roudani, El Jadida</p>
+                <p>📞 05233-41269</p>
+                <p>✉️ ofppt@etablissement.ma</p>
             </div>
 
-            <!-- Réseaux sociaux -->
             <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Suivez-nous</h5>
-                <a href="https://www.facebook.com/ofppt.page.officielle/" class="social-link me-3">Facebook</a>
-                <a href="https://x.com/OFPPT_Officiel" class="social-link me-3">X</a>
-                <a href="https://www.instagram.com/ofppt.officiel/" class="social-link me-3">Instagram</a>
-                <a href="https://www.linkedin.com/company/ofpptpageofficielle/" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link me-3">Facebook</a>
+                <a href="#" class="social-link me-3">X</a>
+                <a href="#" class="social-link me-3">Instagram</a>
+                <a href="#" class="social-link">LinkedIn</a>
             </div>
-
         </div>
 
         <hr class="footer-line">
-
-        <div class="text-center pb-3">
-            © 2026  OFPPT. Tous droits réservés
-        </div>
+        <p class="text-center mb-0">© 2026 OFPPT. Tous droits réservés</p>
     </div>
-    </footer>
+</footer>
 
-
-
-
-
-
-
-
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+<script src="bootstrap2/bootstrap.bundle.min.js"></script>
 </body>
 </html>

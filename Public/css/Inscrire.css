@@ -1,26 +1,27 @@
 /* ================= GLOBAL ================= */
 body {
     background-color: #f8f9fa;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 main {
     flex: 1;
 }
 
 /* ================= HEADER ================= */
 .navbar-custom {
-    background-color: #0a2540; /* bleu foncé */
+    background-color: #0a2540;
 }
-.navbar-brand,.nav-link {
+.navbar-brand, .nav-link {
     color: #ffffff !important;
     font-weight: 500;
 }
 .nav-link:hover {
-    color: #2ecc71 !important; /* vert */
+    color: #2ecc71 !important;
 }
 .dropdown-menu {
     background-color: #ffffff;
@@ -35,33 +36,21 @@ main {
 .btn-search {
     border-color: #2ecc71;
     color: #2ecc71;
-    background-color: transparent; /* ensure visibility */
+    background-color: transparent;
     transition: all 0.3s ease;
 }
 .btn-search:hover {
     background-color: #2ecc71;
-    color: f8f8f8;
+    color: #f8f8f8;
 }
 .search-input {
     border-color: #2ecc71;
 }
-.navbar .form-control {
-    width: 200px; 
-}
-
-.navbar .d-flex {
-    align-items: center;
-}
 
 /* ================= HERO ================= */
-.section-title {
-    color: #0a2540;
-    font-weight: bold;
-}
 .auth-hero {
     height: 35vh;
-    background:
-        linear-gradient(rgba(10,37,64,.8), rgba(10,37,64,.8)),
+    background: linear-gradient(rgba(10,37,64,.8), rgba(10,37,64,.8)),
         url("../images/indexmain/ofppt-campus.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -76,25 +65,28 @@ main {
     font-size: 1.2rem;
 }
 
-/* ================= CARDS & BUTTONS ================= */
+/* ================= CARDS & FORMS ================= */
+/* Base hidden state - takes NO space */
 .card-custom {
-    border-top: 4px solid #2ecc71;
-    opacity: 0;
-    max-height: 0;                /* <-- key change */
     overflow: hidden;
+    max-height: 0;
+    opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, max-height 0.5s ease-in-out; /* <-- add transition here */
-    pointer-events: none;         /* prevent interaction when hidden */
+    margin-bottom: 0 !important;
+    border: none;
+    transition: all 0.6s ease;
+    pointer-events: none;
 }
 
+/* Active visible state - full height and visible */
 .card-custom.show {
+    max-height: 2000px; /* Large enough for any form */
     opacity: 1;
     transform: translateY(0);
-    max-height: 1500px;           /* <-- large enough for tallest form */
-    pointer-events: auto;         /* allow interaction */
+    margin-bottom: 3rem !important; /* Restore original spacing */
+    border-top: 4px solid #2ecc71;
+    pointer-events: auto;
 }
-
-
 
 .btn-custom {
     background-color: #2ecc71;
@@ -106,8 +98,24 @@ main {
     background-color: #27ae60;
 }
 
+/* Active choice button */
+.choice-btn.active {
+    background-color: #2ecc71 !important;
+    color: white !important;
+    border-color: #2ecc71 !important;
+}
+
+/* Labels & inputs */
 label {
     font-weight: 500;
+}
+input.form-control, select.form-select {
+    border: 1px solid #2ecc71;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input.form-control:focus, select.form-select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
 }
 
 /* Forgot password link */
@@ -115,6 +123,7 @@ label {
     display: block;
     font-weight: 500;
     text-decoration: none;
+    color: #0a2540;
     transition: all 0.3s ease;
 }
 .forgot-link-icon:hover {
@@ -123,10 +132,10 @@ label {
 
 /* ================= FOOTER ================= */
 .footer-custom {
-    background-color: #0a2540; /* dark blue */
+    background-color: #0a2540;
 }
 .footer-title {
-    color: #2ecc71; /* green */
+    color: #2ecc71;
     margin-bottom: 15px;
 }
 .social-link {
@@ -137,19 +146,4 @@ label {
 .social-link:hover {
     color: #2ecc71;
     text-decoration: underline;
-}
-.footer-line {
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* ================= FORM ELEMENTS ================= */
-input.form-control,
-select.form-select {
-    border: 1px solid #2ecc71;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-input.form-control:focus,
-select.form-select:focus {
-    border-color: #27ae60;
-    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
 }
