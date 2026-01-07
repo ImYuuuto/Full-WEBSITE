@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Stagiaire - Tableau de Bord</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Main Custom CSS (shared styles: navbar, footer, etc.) -->
+    <link rel="stylesheet" href="css/Inscrire.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/user_page.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR (Same as Inscrire.html) ================= -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="images/indexmain/Logo_ofppt.png" width="40" class="me-2">
+            Établissement
+        </a>
+
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="indexmain.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link active" href="user_page.html">Mon Espace</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Développement Web</a></li>
+                        <li><a class="dropdown-item" href="#">Data Science</a></li>
+                        <li><a class="dropdown-item" href="#">Réseaux</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+
+            <form class="d-flex">
+                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher">
+                <button class="btn btn-search" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container my-5" style="max-width: 1100px;">
+    <h1 class="text-center mb-5 fw-bold" style="color: #0a2540;">Bienvenue dans votre espace stagiaire</h1>
+
+    <div class="row">
+        <!-- Profile Section -->
+        <div class="col-lg-4 mb-4">
+            <div class="dashboard-card text-center">
+                <img src="images\user_page\yasser.png" alt="Photo de profil" class="profile-img mb-3">
+                <h4 id="studentName" class="mb-3">Yasser Amine</h4>
+                <p class="text-muted">Stagiaire</p>
+
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-2"><span class="info-label">Identifiant :</span> <span class="info-value" id="studentId">ST-2025-001</span></li>
+                    <li class="mb-2"><span class="info-label">Filière :</span> <span class="info-value" id="filiere">Développement Web</span></li>
+                    <li class="mb-2"><span class="info-label">Année :</span> <span class="info-value" id="year">2ème année</span></li>
+                    <li class="mb-3"><span class="status-badge">Inscription validée</span></li>
+                </ul>
+
+                <a href="Inscrire.html" class="btn btn-custom w-100">Déconnexion</a>
+            </div>
+        </div>
+
+        <!-- Grades & Info Section -->
+        <div class="col-lg-8 mb-4">
+            <div class="dashboard-card">
+                <h4 class="mb-4" style="color: #0a2540;">Notes des modules - Session 2025/2026</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover grades-table">
+                        <thead>
+                            <tr>
+                                <th>Module</th>
+                                <th>Note /20</th>
+                                <th>Appréciation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTable">
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4 text-end">
+                    <p><strong>Moyenne générale :</strong> <span id="averageGrade" class="text-success fs-5">16.80</span>/20</p>
+                </div>
+            </div>
+
+            <div class="dashboard-card mt-4">
+                <h5 style="color: #0a2540;">Informations importantes</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">📅 Date de rentrée : 15 Septembre 2025</li>
+                    <li class="list-group-item">🕙 Horaires : Lundi à Vendredi, 8h30 - 16h30</li>
+                    <li class="list-group-item">📧 Contact formateur : formateur.dev@ofppt.ma</li>
+                    <li class="list-group-item">📚 Plateforme e-learning disponible</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ================= FOOTER (Same as Inscrire.html) ================= -->
+<footer class="footer-custom text-white">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="footer-title">Coordonnées</h5>
+                <p>📍 Avenue Brahim Roudani, El Jadida</p>
+                <p>📞 05233-41269</p>
+                <p>✉️ ofppt@etablissement.ma</p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="footer-title">Suivez-nous</h5>
+                <a href="#" class="social-link me-3">Facebook</a>
+                <a href="#" class="social-link me-3">X</a>
+                <a href="#" class="social-link me-3">Instagram</a>
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center mb-0">© 2026 OFPPT. Tous droits réservés</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="bootstrap2/bootstrap.bundle.min.js"></script>
+<script src="js/user_page.js"></script>
+</body>
+</html>

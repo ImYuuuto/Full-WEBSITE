@@ -75,16 +75,22 @@
     <div id="login" class="card card-custom show">
         <div class="card-body">
             <h3 class="section-title mb-4">Connexion</h3>
-            <form action="login.php" method="POST">
+            <form id="loginForm">
                 <div class="mb-3">
                     <label for="login-username">Identifiant</label>
-                    <input id="login-username" class="form-control" name="username" required autocomplete="username">
+                    <input type="text" id="login-username" class="form-control" name="username" required autocomplete="username">
                 </div>
                 <div class="mb-3">
                     <label for="login-password">Mot de passe</label>
                     <input type="password" id="login-password" class="form-control" name="password" required autocomplete="current-password">
                 </div>
                 <a class="forgot-link-icon mb-3" href="#"><i class="bi bi-lock-fill me-1"></i> Oublié votre mot de passe ?</a>
+
+                <!-- Error message (hidden by default) -->
+                <div id="loginError" class="text-danger mb-3" style="display: none;">
+                    Identifiant ou mot de passe incorrect.
+                </div>
+
                 <button type="submit" class="btn btn-custom">Se connecter</button>
             </form>
         </div>
