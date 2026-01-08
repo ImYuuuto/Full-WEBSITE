@@ -10,12 +10,12 @@ const fakeUsers = [
         filiere: "Développement Web",
         year: "1er année",
         grades: [
-            { module: "HTML & CSS", note: 17.5 },
-            { module: "JavaScript Avancé", note: 18.0 },
-            { module: "PHP & MySQL", note: 16.0 },
-            { module: "Framework Laravel", note: 17.8 },
-            { module: "Projet Intégrateur", note: 15.0 },
-            { module: "Anglais Technique", note: 16.5 }
+            { module: "HTML & CSS", note: 19.0 },
+            { module: "Python", note: 18.5 },
+            { module: "MySQL", note: 17.5},
+            { module: "PHP", note: 17.8 },
+            { module: "Javascript", note: 18.0 },
+            { module: "Anglais Technique", note: 19.5 }
         ]
     },
     {
@@ -26,11 +26,11 @@ const fakeUsers = [
         filiere: "Développement Web",
         year: "1ère année",
         grades: [
-            { module: "Introduction au Web", note: 16.5 },
-            { module: "HTML & CSS Fondamentaux", note: 17.8 },
-            { module: "JavaScript Débutant", note: 15.5 },
-            { module: "Bases de données MySQL", note: 16.0 },
-            { module: "PHP Initiation", note: 17.2 },
+            { module: "HTML & CSS", note: 19.75 },
+            { module: "Python", note: 15.8 },
+            { module: "MySQL", note: 18.5 },
+            { module: "PHP", note: 16.0 },
+            { module: "Javascript", note: 17.2 },
             { module: "Anglais Technique", note: 15.0 }
         ]
     }
