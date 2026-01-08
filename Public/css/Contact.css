@@ -1,0 +1,317 @@
+.navbar-custom {
+    background:linear-gradient(#020344,#28b8d5); /* bleu foncé */
+}
+.navbar-brand,.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #2ecc71 !important; /* vert */
+}
+.dropdown-menu {
+    background-color: #ffffff;
+}
+.dropdown-item {
+    color: #0a2540;
+}
+.dropdown-item:hover {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+.btn-search {
+    border-color: #2ecc71;
+    color: #2ecc71;
+    background-color: transparent; /* ensure visibility */
+    transition: all 0.3s ease;
+}
+.btn-search:hover {
+    background-color: #2ecc71;
+    color: #f8f8f8;
+}
+.search-input {
+    border-color: #2ecc71;
+}
+.navbar .form-control {
+    width: 200px; 
+}
+
+.navbar .d-flex {
+    align-items: center;
+}
+
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+   
+}
+.video-bg{
+    width: 100%;
+    height: 50vh; 
+    
+}
+
+
+:root {
+    --main: #28c0c3;
+    --dark: #0a2540;
+    --light: #f8f9fa;
+}
+
+/* SECTION */
+.contact-section {
+    background: var(--light);
+    padding: 80px 0;
+}
+
+/* CARDS */
+.contact-card {
+    transition: all 0.4s ease;
+    border-radius: 20px;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ICON */
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .icon-circle {
+    background: linear-gradient(#020344,#28b8d5);
+    color: #fff;
+}
+
+/* FORM */
+.input-group-text {
+    background: transparent;
+}
+
+.form-control,
+.form-select {
+    border-left: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+    border-color:#020344 ;
+}
+
+/* BUTTON */
+.btn-main {
+    background: linear-gradient(135deg, #020344, #285a98);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(20, 126, 141, 0.5);
+}
+
+/* SCROLL TOP */
+.scroll-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--main);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* DARK MODE */
+.dark {
+    background: #12a6a6;
+    color: #fff;
+}
+
+.dark .contact-section {
+    background: #18aa92;
+}
+
+.dark .contact-card {
+    background: #24b89a;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+    background: #24ac98;
+    color: #fff;
+}
+
+iframe {
+    filter: grayscale(10%);
+    transition: 0.3s ease;
+}
+
+iframe:hover {
+    filter: grayscale(0%);
+}
+
+/* FORM CARD */
+.card {
+    background-color: #ffffff; /* clean white */
+    border-radius: 12px;       /* smooth corners */
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* FORM LABELS */
+.form-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #0a2540; /* dark blue for professionalism */
+    margin-bottom: 5px;
+}
+
+/* FORM INPUTS */
+.form-control,
+.form-select,
+textarea.form-control {
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+    border-color: #0a2540; /* accent color */
+    box-shadow: 0 0 5px rgba(10, 37, 64, 0.2);
+    outline: none;
+}
+
+/* INVALID FEEDBACK */
+.invalid-feedback {
+    font-size: 0.85rem;
+    color: #dc3545; /* bootstrap red */
+}
+
+/* BUTTON */
+.btn-main {
+    background-color: #0a2540;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-main:hover {
+    background-color: #0c2d57;
+    transform: translateY(-2px);
+}
+
+.btn-main:focus {
+    box-shadow: 0 0 0 3px rgba(10,37,64,0.3);
+}
+
+/* RESPONSIVE SPACING */
+.row.g-3 > [class*='col-'] {
+    margin-bottom: 15px;
+}
+
+/* TEXTAREA SPECIFIC */
+textarea.form-control {
+    resize: none; /* remove resize handle */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+.footer-custom {
+       background:linear-gradient(#40dbd6,#28b8d5); /* dark blue */
+       position: relative;
+       z-index: 2;
+}
+.footer-title {
+    color: #2ecc71; /* green */
+    margin-bottom: 15px;
+}
+.social-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.social-link:hover {
+    color: #2ecc71;
+    text-decoration: underline;
+}
+.footer-line {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= FORM ELEMENTS ================= */
+input.form-control,
+select.form-select {
+    border: 1px solid #2ecc71;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input.form-control:focus,
+select.form-select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
