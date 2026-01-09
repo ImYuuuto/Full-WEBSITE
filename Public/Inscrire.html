@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion & Inscription</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/Inscrire.css">
+    <link rel="stylesheet" href="css/search_bar.css">
 </head>
 <body>
 
@@ -29,23 +27,15 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Inscrire.html">M'inscrire</a></li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Prodesfilli.html">Toutes les filliers</a></li>
-                        <li><a class="dropdown-item" href="#">Développement Web</a></li>
-                        <li><a class="dropdown-item" href="#">Data Science</a></li>
-                        <li><a class="dropdown-item" href="#">Réseaux</a></li>
-                    </ul>
-                </li>
-
+                <li class="nav-item"><a class="nav-link" href="Prodesfilli.html">Formations</a></li>
                 <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
             </ul>
 
-            <form class="d-flex">
-                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher">
+            <form class="d-flex position-relative" role="search" autocomplete="off">
+                <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Rechercher une filière"/>
                 <button class="btn btn-search" type="submit">Search</button>
+                <!-- Suggestions -->
+                <ul id="searchSuggestions" class="list-group position-absolute w-100"></ul>
             </form>
         </div>
     </div>
@@ -207,5 +197,6 @@
 <!-- ================= SCRIPTS ================= -->
 <script src="bootstrap2/bootstrap.bundle.min.js"></script>
 <script src="js/inscrire.js"></script>
+<script src="js/search_bar.js"></script>
 </body>
 </html>

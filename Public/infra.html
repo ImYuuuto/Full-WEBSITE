@@ -7,31 +7,40 @@
 
     <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
     <link rel="stylesheet" href="css/inf.css">
+    <link rel="stylesheet" href="css/search_bar.css">
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/indexmain/Logo_ofppt.png" width="40" class="me-2">
-            Infrastructure Digitale
-        </a>
+        <!--  NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
 
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/indexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
+                <span>Établissement</span>
+            </a>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Infrastructure Digitale</a></li>
-                <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-            </ul>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Inscrire.html">M'inscrire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Prodesfilli.html">Formations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+
+                <form class="d-flex position-relative" role="search" autocomplete="off">
+                    <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Rechercher une filière"/>
+                    <button class="btn btn-search" type="submit">Search</button>
+                    <!-- Suggestions -->
+                    <ul id="searchSuggestions" class="list-group position-absolute w-100"></ul>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <!-- ================= HEADER VIDEO ================= -->
 <header class="video-header">
@@ -176,6 +185,7 @@ Au cours de cette étape, qui dure une année de formation professionnelle, les 
 </footer>
 
 <script src="bootstrap2/bootstrap.bundle.min.js"></script>
+<script src="js/search_bar.js"></script>
 
 <script>
 const text = `

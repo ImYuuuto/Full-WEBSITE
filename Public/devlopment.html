@@ -6,47 +6,39 @@
     <title>Accueil | Établissement</title>
     <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
     <link rel="stylesheet" href="css\dev.css">
+    <link rel="stylesheet" href="css/search_bar.css">
 </head>
 <body>
 
-<!--  NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
+    <!--  NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
 
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/indexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
-            <span>Établissement</span>
-        </a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/indexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
+                <span>Établissement</span>
+            </a>
 
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Inscrire.html">M'inscrire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Prodesfilli.html">Formations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Prodesfilli.html">Toutes les filliers</a></li>
-                        <li><a class="dropdown-item" href="#">Développement Web</a></li>
-                        <li><a class="dropdown-item" href="#">Data Science</a></li>
-                        <li><a class="dropdown-item" href="#">Réseaux</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-            </ul>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn btn-search" type="submit">Search</button>
-            </form>
+                <form class="d-flex position-relative" role="search" autocomplete="off">
+                    <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Rechercher une filière"/>
+                    <button class="btn btn-search" type="submit">Search</button>
+                    <!-- Suggestions -->
+                    <ul id="searchSuggestions" class="list-group position-absolute w-100"></ul>
+                </form>
         </div>
-    </div>
-</nav>
+    </nav>
 <header class="video-header">
     <video autoplay muted loop playsinline>
         <source src="videos/dev.mp4" type="video/mp4">
@@ -167,46 +159,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ================= FOOTER ================= -->
 <footer class="footer-custom text-white pt-4">
     <div class="container">
@@ -234,20 +186,7 @@
 </footer>
 
 <script src="bootstrap2/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="js/search_bar.js"></script>
 
 <script>
 const text = `

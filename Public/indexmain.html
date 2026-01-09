@@ -6,94 +6,88 @@
     <title>Accueil | Établissement</title>
     <link rel="stylesheet" href="bootstrap2/bootstrap.min.css">
     <link rel="stylesheet" href="css/styleindexmain.css">
+    <link rel="stylesheet" href="css/search_bar.css">
 </head>
 <body>
-<!--  NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
+    <!--  NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
 
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="/iimagesndexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
-            <span>Établissement</span>
-        </a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/indexmain/Logo_ofppt.png" width="40" alt="Logo OFPPT" class="me-2">
+                <span>Établissement</span>
+            </a>
 
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="Inscrire.html">M’inscrire</a></li>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="indexmain.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Inscrire.html">M'inscrire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Prodesfilli.html">Formations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Formations</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Prodesfilli.html">Toutes les filliers</a></li>
-                        <li><a class="dropdown-item" href="#">Développement Web</a></li>
-                        <li><a class="dropdown-item" href="#">Data Science</a></li>
-                        <li><a class="dropdown-item" href="#">Réseaux</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-            </ul>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2 search-input" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn btn-search" type="submit">Search</button>
-            </form>
+                <form class="d-flex position-relative" role="search" autocomplete="off">
+                    <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Rechercher une filière"/>
+                    <button class="btn btn-search" type="submit">Search</button>
+                    <!-- Suggestions -->
+                    <ul
+                      id="searchSuggestions"
+                      class="list-group position-absolute w-100"
+                    ></ul>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- CAROUSEL -->
-<section class="main-banner">
-    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <!-- CAROUSEL -->
+    <section class="main-banner">
+        <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-        <div class="carousel-indicators">
-            <button data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-            <button data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-            <button data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
-        </div>
+            <div class="carousel-indicators">
+                <button data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
 
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/indexmain/carou1.jpg" class="d-block w-100 carousel-img" alt="Établissement">
-                <div class="carousel-caption">
-                    <h2>Notre Établissement</h2>
-                    <p>Un environnement moderne pour un apprentissage de qualité</p>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/indexmain/carou1.jpg" class="d-block w-100 carousel-img" alt="Établissement">
+                    <div class="carousel-caption">
+                        <h2>Notre Établissement</h2>
+                        <p>Un environnement moderne pour un apprentissage de qualité</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/indexmain/carou2.jpeg" class="d-block w-100 carousel-img" alt="Événements">
+                    <div class="carousel-caption">
+                        <h2>Événements Récents</h2>
+                        <p>Conférences, ateliers et activités étudiantes</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/indexmain/carou3.jpg" class="d-block w-100 carousel-img" alt="Vie étudiante">
+                    <div class="carousel-caption">
+                        <h2>Vie Étudiante</h2>
+                        <p>Un campus dynamique et innovant</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="carousel-item">
-                <img src="images/indexmain/carou2.jpeg" class="d-block w-100 carousel-img" alt="Événements">
-                <div class="carousel-caption">
-                    <h2>Événements Récents</h2>
-                    <p>Conférences, ateliers et activités étudiantes</p>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
 
-            <div class="carousel-item">
-                <img src="images/indexmain/carou3.jpg" class="d-block w-100 carousel-img" alt="Vie étudiante">
-                <div class="carousel-caption">
-                    <h2>Vie Étudiante</h2>
-                    <p>Un campus dynamique et innovant</p>
-                </div>
-            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-</section>
-
-
+    </section>
 
 <section class="container my-5">
     <h2 class="text-center mb-5">Informations Générales</h2>
@@ -188,25 +182,6 @@
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Hero Section Two Columns -->
 <section class="hero-section">
   <div class="container">
@@ -219,7 +194,7 @@
             Vous êtes sur la bonne voie, pour devenir acteur du Maroc des Compétences !<br><br>
             Bien choisir votre métier est votre premier pas sur le chemin de la réussite.
         </p>
-        <a href="#formations" class="btn btn-hero">Découvrir les Formations</a>
+        <a href="Prodesfilli.html" class="btn btn-hero">Découvrir les Formations</a>
       </div>
 
       <!-- Right Column: Video -->
@@ -233,30 +208,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -287,6 +238,6 @@
 </footer>
 
 <script src="bootstrap2/bootstrap.bundle.min.js"></script>
-
+<script src="js/search_bar.js"></script>
 </body>
 </html>

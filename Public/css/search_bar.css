@@ -1,0 +1,17 @@
+/* for the search bar  */
+#searchSuggestions {
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+#searchSuggestions .list-group-item {
+    cursor: pointer;
+}
+
+#searchSuggestions .list-group-item:hover {
+    background-color: #2ecc71;
+    color: white;
+}

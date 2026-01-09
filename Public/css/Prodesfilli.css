@@ -148,7 +148,7 @@ body {
     border: none;
     width: 300px;
     border-radius: 20px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4 ease-in-out;
     overflow: hidden;
 }
 
@@ -239,9 +239,6 @@ body {
 }
 
 
-
-
-
 .section-title {
     font-weight: 800;
     color: #1c2d5a;
@@ -327,7 +324,7 @@ body {
 .action-buttons {
     display: flex;
     flex-direction: column;
-    gap: 14px; /* margin بين الزرارين */
+    gap: 14px; 
 }
 
 /* Button common */
@@ -411,32 +408,12 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================= FOOTER ================= */
 .footer-custom {
 background: linear-gradient(135deg, #0A2540, #2E8B57);
-       position: relative;
-       z-index: 2;
 }
 .footer-title {
-    color: #4db72c; /* green */
+    color: #2ecc71;
     margin-bottom: 15px;
 }
 .social-link {
@@ -447,9 +424,6 @@ background: linear-gradient(135deg, #0A2540, #2E8B57);
 .social-link:hover {
     color: #2ecc71;
     text-decoration: underline;
-}
-.footer-line {
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ================= FORM ELEMENTS ================= */
@@ -462,4 +436,49 @@ input.form-control:focus,
 select.form-select:focus {
     border-color: #27ae60;
     box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+/* ================= FOOTER FIX (ISOLATED) ================= */
+#site-footer {
+    background: linear-gradient(135deg, #0A2540, #2E8B57) !important;
+    color: #ffffff !important;
+}
+
+#site-footer .container,
+#site-footer .row {
+    background: transparent !important;
+}
+
+#site-footer p,
+#site-footer h5,
+#site-footer a {
+    color: #ffffff !important;
+}
+
+#site-footer .footer-title {
+    color: #2ecc71 !important;
+}
+
+#site-footer .social-link:hover {
+    color: #2ecc71 !important;
+}
+
+#site-footer hr {
+    border-color: rgba(255,255,255,0.25);
+}
+/* for the search bar  */
+#searchSuggestions {
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+#searchSuggestions .list-group-item {
+    cursor: pointer;
+}
+
+#searchSuggestions .list-group-item:hover {
+    background-color: #2ecc71;
+    color: white;
 }
