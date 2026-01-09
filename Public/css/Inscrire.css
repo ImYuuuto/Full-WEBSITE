@@ -14,11 +14,17 @@ main {
 
 /* ================= HEADER ================= */
 .navbar-custom {
-    background-color: #0a2540;
+background: linear-gradient(135deg, #0A2540, #2E8B57);
 }
 .navbar-brand, .nav-link {
     color: #ffffff !important;
     font-weight: 500;
+}
+.navbar-nav {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 40px;
+    backdrop-filter: blur(6px);
 }
 .nav-link:hover {
     color: #2ecc71 !important;
@@ -132,7 +138,7 @@ input.form-control:focus, select.form-select:focus {
 
 /* ================= FOOTER ================= */
 .footer-custom {
-    background-color: #0a2540;
+background: linear-gradient(135deg, #0A2540, #2E8B57);
 }
 .footer-title {
     color: #2ecc71;
